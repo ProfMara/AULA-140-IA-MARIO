@@ -55,6 +55,8 @@ var gameConfig={
 
 GameStatus = "";
 
+
+
 function game(){
 
 
@@ -113,18 +115,13 @@ function game(){
   }
 }  
 
-function startGame()
-{
-  GameStatus = "start";
-  document.getElementById("status").innerHTML = "Game Is Loading";
-}
 
 // change game status if any key is pressed
 function changeGameStatud(character){
  if(gameConfig.status==="start" && GameStatus=="start") { 
-   document.getElementById("status").innerHTML = "Game Is Loaded";
+
    
- initializeCharacterStatus(mario)
+    initializeCharacterStatus(mario)
     gameConfig.status= "play"
   }
   if(gameConfig.status==="gameover" && keyDown(control.revive)) {
@@ -461,7 +458,7 @@ function positionOfEnemy(enemy){
 
 	platforms.forEach(function(element){ enemyStandOnObjs(enemy, element); });
 	bricks.forEach(function(element){ enemyStandOnObjs(enemy, element);});
-  pipes.forEach(function(element){ enemyStandOnObjs(enemy, element); })
+  	pipes.forEach(function(element){ enemyStandOnObjs(enemy, element); })
 	
 	enemy.position.y+=gameConfig.gravityEnemy;
 
